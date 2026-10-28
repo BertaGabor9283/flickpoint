@@ -1,0 +1,30 @@
+feature,area,priority,original,clone,notes
+Stream headphone motion at ~50 Hz,motion,must,yes,yes,
+Show live update rate (Hz),live panel,should,yes,yes,
+Show which bud is sending and connection state,live panel,should,yes,yes,
+Show pitch yaw roll readouts,live panel,could,yes,yes,
+Calibrate a reference attitude,calibration,must,yes,yes,
+Space resets the reference point,calibration,must,yes,yes,
+R repeats calibration,calibration,should,yes,yes,
+Guidance line that follows calibration state,live panel,should,yes,yes,
+Aim the bud to move the system cursor (absolute),pointer,must,yes,yes,
+Smoothing so the cursor does not jitter,pointer,must,yes,yes,
+Flick gesture clicks,click,must,yes,yes,inferred from the acceleration meter (medium confidence); built as |userAcceleration| over a threshold
+Acceleration meter with threshold marker and peak,live panel,should,yes,yes,
+Pointer preview dot in the panel,live panel,could,yes,yes,
+Works over every app (global cursor),pointer,must,yes,yes,
+Guided 3-step calibration that learns your grip and range,calibration,must,no,yes,added: works however you hold the bud
+Global hotkeys to toggle / recenter / calibrate,control,must,no,yes,added: a safe way out when the cursor is captured
+Menu bar icon with on/off and status,control,should,no,yes,added
+Auto-pause when the bud disconnects,control,should,no,yes,added
+Click lands where you aimed (not where the flick swung),click,should,no,yes,added: uses position from just before the flick
+Double-click from two quick flicks,click,should,no,yes,added
+Adjustable gain smoothing and flick threshold (saved),settings,should,no,yes,added
+Permission checks with one-click fix,onboarding,should,no,yes,added
+Sticky pointer: snaps to buttons links and rows with a highlight (iPad style),pointer,should,no,yes,added on request; uses the Accessibility API to find clickable elements
+Drag-to-Applications DMG installer,distribution,should,no,yes,added on request; built on the Mac by build.sh --dmg
+Auto-recenter after 3 s still (spatial-audio style),calibration,should,no,yes,added on request; default only when aimed off-screen so a resting pointer doesn't jump
+Full app: main window with sidebar (Live / Calibration / Settings / Help),app,should,no,yes,added on request
+Dock icon with Dock menu and standard app menus,app,should,no,yes,added on request; Dock and menu bar icon can each be hidden
+Open at login,app,could,no,yes,added; SMAppService
+Creator branding and watermark,brand,could,yes,skip,not part of the product and not ours

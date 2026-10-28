@@ -1,0 +1,11 @@
+# Build log
+- Shell: menu-bar app, live panel, settings in UserDefaults.
+- Motion: CMHeadphoneMotionManager on the main queue; quaternion convention detected once from gravity so the math doesn't depend on an undocumented detail.
+- Calibration: 3 still-holds (center, right edge, top edge). Axes stored in the bud's own frame so they survive reconnects; checked in a Python simulation.
+- Click: acceleration spike + re-arm when settled + 280 ms cooldown; click uses the position from 100 ms before; cursor frozen 220 ms after.
+- Not done: multi-display (main display only), right-click, scroll. Not compiled yet (no Swift toolchain in the build workspace).
+- Sticky pointer (on request): Accessibility hit-test off the main thread, max 30/s, 50 ms timeout; capture when inside a control, release past an escape margin of 10 + 30×strength pt; 60 ms ease; click-through highlight window.
+- DMG: build.sh --dmg stages the app with an Applications link and runs hdiutil (UDZO).
+- Auto-recenter (on request): 3 s still (|rotationRate| < 0.3 rad/s) → reference slerps to current aim over 0.6 s (smoothstep). Modes Off / Off-screen (|aim| > 1.1, default) / Always. Re-arms only after movement.
+- Menu bar (on request): left-click opens the live panel as a popover under the icon, right-click / ⌃-click opens the quick menu; separate window removed; panel auto-opens only on first run.
+- Full app (on request): regular activation policy; NSWindow hosting a NavigationSplitView (Live, Calibration, Settings, Help) with toolbar switch + recenter; standard main menu (Flickpoint, Edit, Control, View, Window, Help); Dock menu; reopen → window; closing the window keeps the app alive; compact menu bar popover; Settings toggles for Dock icon / menu bar icon (one always on) and Open at login (SMAppService). Version 2.0.

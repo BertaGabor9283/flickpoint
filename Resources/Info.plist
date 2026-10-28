@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>Flickpoint</string>
+    <key>CFBundleDisplayName</key>
+    <string>Flickpoint</string>
+    <key>CFBundleIdentifier</key>
+    <string>app.flickpoint.mac</string>
+    <key>CFBundleExecutable</key>
+    <string>Flickpoint</string>
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>2.0</string>
+    <key>CFBundleVersion</key>
+    <string>2</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>14.0</string>
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.utilities</string>
+    <key>NSHumanReadableCopyright</key>
+    <string>© 2026 Berta Gábor</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>NSMotionUsageDescription</key>
+    <string>Flickpoint reads how your headphones are tilted so you can aim and click the pointer with them.</string>
+</dict>
+</plist>
